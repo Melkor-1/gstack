@@ -122,12 +122,8 @@ STACK_DEF void stack_destroy(Stack *s) ATTRIB_NONNULL(1);
 
 #ifdef STACK_IMPLEMENTATION
 
-#if defined(STACK_MALLOC) && defined(STACK_REALLOC) && defined(STACK_FREE)
-// Ok.
-#elif !defined(STACK_MALLOC) && !defined(STACK_REALLOC) && !defined(STACK_FREE)
-// Ok.
-#else
-    #error  "Must define all or none of STACK_MALLOC, STACK_REALLOC, and STACK_FREE."
+#if defined(IO_MALLOC) != defined(IO_REALLOC) || defined(IO_REALLOC) != defined(IO_FREE)
+    #error  "Must define all or none of IO_MALLOC, IO_REALLOC, and IO_FREE."
 #endif
 
 #ifndef STACK_MALLOC
