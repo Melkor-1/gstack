@@ -1,4 +1,4 @@
-# stack
+# gstack
 A Header-only Implementation of a Generic Stack
 
 No need to build or link. To use, simply add the header to a source file like so:
