@@ -221,7 +221,6 @@ GSTACK_DEF void *gstack_pop(gstack *s)
     }
 
     --s->size;
-    void *const top = (char *) s->data + (s->size * s->memb_size);
         
     /* Half the array size if it is too large, or when it is less than one-fourth
      * the array size. This is the approach CLRS suggests. 
@@ -235,15 +234,13 @@ GSTACK_DEF void *gstack_pop(gstack *s)
         void *const tmp = realloc(s->data, s->memb_size * new_cap); 
 
         if (tmp) {
-            fprintf(stderr, "Reallocated %p to %p.\n", (void *)s->data, (void *)tmp);
             s->data = tmp;
             s->cap = new_cap;
         } 
         /* Else do nothing. The original memory is left intact. */
-
     }
     
-    return top;
+    return (char *) s->data + (s->size * s->memb_size);
 }
 
 GSTACK_DEF void gstack_destroy(gstack *s)
