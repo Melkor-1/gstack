@@ -26,6 +26,8 @@
  *
  * You can define GSTACK_MALLOC, GSTACK_REALLOC, and GSTACK_FREE to avoid using 
  * malloc(), realloc(), and free().
+ * 
+ * Note: It is undefined behavior to push function pointers onto the stack. 
  */
 
 #ifndef GSTACK_DEF
