@@ -1,5 +1,6 @@
-# gstack
-A Header-only Implementation of a Generic Stack
+# A Header-only Implementation of a Generic Stack
+
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://https://github.com/Melkor-1/pyva/edit/main/LICENSE)
 
 No need to build or link. To use, simply add the header to a source file like so:
 
